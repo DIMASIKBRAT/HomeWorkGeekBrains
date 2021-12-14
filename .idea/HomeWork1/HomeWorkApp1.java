@@ -1,74 +1,56 @@
-public class HomeWorkApp {
+public class HomeWorkApp2 {
 
     public static void main(String[] args) {
 
-        printThreeWords();
-        checkSumSign();
-        printColor();
-        compareNumbers();
-
+        System.out.println(methodFive(0));
+        methodFour("Привет", 4);
+        methodThree(-4);
+        methodTwo(-4);
+        methodOne(2, 7);
     }
 
-    private static void printThreeWords() {
+    private static boolean methodOne(int b, int c) {
 
-        System.out.println( " Orange " );
-        System.out.println( " Banana " );
-        System.out.println( " Apple " );
-
+        int summ = b + c;
+        if (summ <= 20 && summ >= 10) {
+            return true;
+        }
+        return false;
     }
 
-    private static void checkSumSign() {
+    private static void methodTwo(int i) {
 
-        int a = 7;
-        int b = -15;
-
-        if ( a + b >= 0 ) {
-
-            System.out.println ( " Сумма положительная " );
-
+        if (i >= 0) {
+            System.out.println("Число положительное: " + i);
         } else {
-
-            System.out.println ( " Сумма отрицательная " );
-
+            System.out.println("Число отрицательное: " + i);
         }
 
     }
 
-    private static void printColor() {
+    private static boolean methodThree(int l) {
 
-        int value = 100;
-
-        if ( value <= 0 ) {
-
-            System.out.println ( " Красный " );
-
-        } if ( value > 0 && value <= 100 ) {
-
-            System.out.println( " Желтый " );
-
-        } else {
-
-            System.out.println( " Зеленый " );
-
+        if (l > 0) {
+            return true;
         }
 
+        return false;
     }
 
-    private static void compareNumbers() {
+    private static void methodFour(String str, int e) {
 
-        int a = -10;
-        int b = 10;
-
-        if ( a >= b ) {
-
-            System.out.println( " a >= b " );
-
-        } else {
-
-            System.out.println( " a < b " );
-
+        for (int i = 0; i < e; i++) {
+            System.out.println(str);
         }
-
     }
 
+    private static boolean methodFive(int year) {
+
+        if (year > 0 && year % 4 == 0
+                && year % 100 != 0
+                ^ year % 400 == 0) {
+            return true;
+        }
+        return false;
+    }
 }
